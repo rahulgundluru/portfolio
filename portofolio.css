@@ -492,17 +492,19 @@
 /* Hero Video Background */
 .hero {
   position: relative;
-  overflow: visible;
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
 .hero-video-container,
 .hero-banner.visible {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
   overflow: hidden;
 }
 
@@ -538,7 +540,20 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.4));
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+  pointer-events: none;
+}
+
+/* Bottom shadow to blend with background */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, var(--bg-primary));
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -546,7 +561,7 @@
 .hero-social-list,
 .scroll-down {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-video-container.hidden {
@@ -622,11 +637,12 @@
     max-width: 400px;
     margin-inline: auto;
     margin-bottom: 80px;
-    
+    overflow: hidden;
   }
-  
+
   .image-create {
     border-radius: 70px;
+    margin-bottom: -40px;
   }
 
   .about .btn {
