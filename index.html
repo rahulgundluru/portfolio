@@ -98,12 +98,19 @@
 
       <section class="hero" id="home">
 
-        <figure class="hero-banner">
+        <!-- Video Background -->
+        <div class="hero-video-container" id="heroVideoContainer">
+          <video class="hero-video" id="heroVideo" autoplay muted playsinline>
+            <source src="./rahul_intro_video.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <figure class="hero-banner" id="heroBanner" style="display: none;">
 
           <picture>
-            <source srcset="./assets/images/hero-banner.png" media="(min-width: 768px)">
-            <source srcset="./assets/images/hero-banner-md.png" media="(min-width: 500px)">
-            <img src="./assets/images/hero-banner-sm.png" alt="A man in a blue shirt with a happy expression"
+            <source srcset="./assets/images/rg_bg.png" media="(min-width: 768px)">
+            <source srcset="./assets/images/rg_bg.png" media="(min-width: 500px)">
+            <img src="./assets/images/rg_bg.png" alt="A man in a blue shirt with a happy expression"
               class="w-100">
           </picture>
 
@@ -206,7 +213,7 @@
       <section class="about" id="about">
 
         <figure class="about-banner">
-          <img src="./assets/images/WhatsApp Image 2023-08-25 at 17.20.10.jpeg" alt="A man in a alice blue shirt with a thinking expression"
+          <img src="./assets/images/rahulgbgremove.png" alt="A man in a alice blue shirt with a thinking expression"
             class="w-100 image-create">
         </figure>
 

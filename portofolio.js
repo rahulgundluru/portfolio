@@ -103,3 +103,27 @@ if (localStorage.getItem("theme") === "light_theme") {
   document.body.classList.remove("light_theme");
   document.body.classList.add("dark_theme");
 }
+
+
+
+/**
+ * Hero video background - switch to image after video ends
+ */
+
+const heroVideo = document.getElementById('heroVideo');
+const heroVideoContainer = document.getElementById('heroVideoContainer');
+const heroBanner = document.getElementById('heroBanner');
+
+if (heroVideo && heroVideoContainer && heroBanner) {
+  // When video ends, hide video and show image
+  heroVideo.addEventListener('ended', function () {
+    heroVideoContainer.classList.add('hidden');
+    heroBanner.classList.add('visible');
+  });
+
+  // Fallback: if video fails to load, show image immediately
+  heroVideo.addEventListener('error', function () {
+    heroVideoContainer.classList.add('hidden');
+    heroBanner.classList.add('visible');
+  });
+}
